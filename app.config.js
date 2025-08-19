@@ -22,6 +22,11 @@ module.exports = function (_config) {
     'applinks:staging.bsky.app',
     'appclips:bsky.app',
     'appclips:go.bsky.app', // Allows App Clip to work when scanning QR codes
+    // SF Project PDS domains
+    'applinks:pdsapi.sfproject.net',
+    'applinks:bsky.sfproject.net',
+    'applinks:ozone.sfproject.net',
+    'applinks:plc.sfproject.net',
     // When testing local services, enter an ngrok (et al) domain here. It must use a standard HTTP/HTTPS port.
     ...(IS_DEV || IS_TESTFLIGHT ? [] : []),
   ]
