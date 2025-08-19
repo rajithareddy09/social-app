@@ -1,7 +1,7 @@
 import {Dimensions} from 'react-native'
 
 import {isSafari} from '#/lib/browser'
-import {isWeb} from '#/platform'
+import {isWeb} from '#/platform/detection'
 import {getActiveAppViewUrl} from '#/lib/pds-config'
 
 const {height: SCREEN_HEIGHT} = Dimensions.get('window')
