@@ -71,6 +71,10 @@ export function getActiveAppViewUrl(): string {
   
   return CURRENT_PDS_CONFIG.appViewUrl
 }
+export function getSocialAppUrl(): string {
+
+  return "https://app.sfproject.net"
+}
 
 // Function to check if using SF Project PDS
 export function isUsingSFProjectPDS(): boolean {

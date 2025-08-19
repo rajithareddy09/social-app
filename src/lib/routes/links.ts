@@ -1,6 +1,7 @@
 import {type AppBskyGraphDefs, AtUri} from '@atproto/api'
 
 import {isInvalidHandle} from '#/lib/strings/handles'
+import {getActiveAppViewUrl, getSocialAppUrl} from '#/lib/pds-config'
 
 export function makeProfileLink(
   info: {
@@ -50,9 +51,9 @@ export function makeStarterPackLink(
   rkey?: string,
 ) {
   if (typeof starterPackOrName === 'string') {
-    return `https://bsky.app/start/${starterPackOrName}/${rkey}`
+    return `${getSocialAppUrl()}/start/${starterPackOrName}/${rkey}`
   } else {
     const uriRkey = new AtUri(starterPackOrName.uri).rkey
-    return `https://bsky.app/start/${starterPackOrName.creator.handle}/${uriRkey}`
+    return `${getSocialAppUrl()}/start/${starterPackOrName.creator.handle}/${uriRkey}`
   }
 }

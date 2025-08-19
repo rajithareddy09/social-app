@@ -4,6 +4,7 @@ import {keepPreviousData, useInfiniteQuery} from '@tanstack/react-query'
 
 import {GIF_FEATURED, GIF_SEARCH} from '#/lib/constants'
 import {logger} from '#/logger'
+import {getActiveAppViewUrl} from '#/lib/pds-config'
 
 export const RQKEY_ROOT = 'gif-service'
 export const RQKEY_FEATURED = [RQKEY_ROOT, 'featured']

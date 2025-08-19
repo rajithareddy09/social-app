@@ -1,4 +1,6 @@
 import {AtUri} from '@atproto/api'
+import {bsky} from '@atproto/api'
+import {getActiveAppViewUrl} from '#/lib/pds-config'
 
 import type * as bsky from '#/types/bsky'
 
