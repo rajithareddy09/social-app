@@ -12,8 +12,16 @@ export const ENV = {
 
 export type Environment = typeof ENV[keyof typeof ENV]
 
+// Configuration flag - set this to true to use SF Project PDS
+const USE_SF_PROJECT_PDS = true
+
 // Get current environment
 export function getCurrentEnvironment(): Environment {
+  // If USE_SF_PROJECT_PDS is true, use production (SF Project PDS)
+  if (USE_SF_PROJECT_PDS) {
+    return ENV.PRODUCTION
+  }
+  
   // You can modify this to detect environment from build process
   // For now, default to production (SF Project PDS)
   return ENV.PRODUCTION
@@ -61,3 +69,6 @@ export function getCurrentPDSConfig() {
 
 // Export current configuration
 export const CURRENT_PDS_CONFIG = getCurrentPDSConfig()
+
+// Export the configuration flag for easy modification
+export {USE_SF_PROJECT_PDS}

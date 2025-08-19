@@ -2,12 +2,11 @@ import {type Insets, Platform} from 'react-native'
 import {type AppBskyActorDefs} from '@atproto/api'
 import {getActivePDSUrl, getActiveAppViewUrl, getActivePDSDID, getActiveAppViewDID} from './pds-config'
 
-export const LOCAL_DEV_SERVICE =
-  Platform.OS === 'android' ? 'http://10.0.2.2:2583' : 'http://localhost:2583'
+export const LOCAL_DEV_SERVICE = getActivePDSUrl()
 export const STAGING_SERVICE = 'https://staging.bsky.dev'
 export const BSKY_SERVICE = 'https://bsky.social'
 export const BSKY_SERVICE_DID = 'did:web:bsky.social'
-export const PUBLIC_BSKY_SERVICE = 'https://public.api.bsky.app'
+export const PUBLIC_BSKY_SERVICE = getActiveAppViewUrl()
 export const DEFAULT_SERVICE = getActivePDSUrl()
 export const DEFAULT_APPVIEW_SERVICE = getActiveAppViewUrl()
 export const DEFAULT_SERVICE_DID = getActivePDSDID()
@@ -211,11 +210,11 @@ export const urls = {
   },
 }
 
-export const PUBLIC_APPVIEW = 'https://api.bsky.app'
-export const PUBLIC_APPVIEW_DID = 'did:web:api.bsky.app'
+export const PUBLIC_APPVIEW = getActiveAppViewUrl()
+export const PUBLIC_APPVIEW_DID = getActiveAppViewDID()
 export const PUBLIC_STAGING_APPVIEW_DID = 'did:web:api.staging.bsky.dev'
 
-export const DEV_ENV_APPVIEW = `http://localhost:2584` // always the same
+export const DEV_ENV_APPVIEW = getActiveAppViewUrl()
 
 export const webLinks = {
   tos: `https://bsky.social/about/support/tos`,
